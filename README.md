@@ -1,16 +1,27 @@
-# React + Vite
+Создайте мини-приложение с функциональными и классовыми компонентами, props, состоянием, композицией, импортом файлов и изображений.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Структура приложения:
 
-Currently, two official plugins are available:
+/components
+  Header.js
+  UserCard.js
+  UserList.js
+  Footer.js
+/App.js
+/index.js
+/styles.css
+/images/avatar1.png
+/images/avatar2.png
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1) Компоненты должны быть разделены по файлам.
+2) Используйте экспорт и импорт компонентов.
 
-## React Compiler
+Содержимое компонентов:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Header - функциональный компонент. Принимает props: title (текст заголовка). Подключает стиль из CSS.
+UserCard - функциональный компонент, который отображает одного пользователя. Props: name (строка) age (число) avatar (картинка). Используйте inline-стили для оформления карточки.
+UserList - классовый компонент, который хранит state с массивом пользователей. Каждый пользователь - объект { id, name, age, avatar }. Рендерит массив UserCard с помощью props. Добавляет форму для добавления нового пользователя (имя, возраст, выбор аватара). При добавлении нового пользователя обновляет state и ререндерит список.
+Footer - функциональный компонент, который принимает props text и отображает футер. Подключает CSS или inline-стиль. 
+App - главный компонент, который композитно рендерит: Header → UserList → Footer. Передаёт props в Header и Footer.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Используйте изображения из папки /images/. Inline-стили и CSS-файл.
