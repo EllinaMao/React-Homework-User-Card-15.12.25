@@ -1,0 +1,51 @@
+import Footer from './componetns/Footer.jsx';
+import Header from './componetns/Header.jsx';
+import UserList from './componetns/UserList.jsx';
+
+// import Footer from './components/Footer.jsx';
+// import './assets/css/App.css';
+
+function App() {
+  const title = "User Management App";
+  const footerText = "© 2024 User Management App";
+
+
+  return (
+    <>
+      <Header title={title} />
+      <UserList />
+      <Footer text={footerText} />
+    </>
+  )
+}
+
+export default App
+
+/**Создайте мини-приложение с функциональными и классовыми компонентами, props, состоянием, композицией, импортом файлов и изображений.
+
+Структура приложения:
+
+/components
+  Header.js
+  UserCard.js
+  UserList.js
+  Footer.js
+/App.js
+/index.js
+/styles.css
+/images/avatar1.png
+/images/avatar2.png
+
+1) Компоненты должны быть разделены по файлам.
+2) Используйте экспорт и импорт компонентов.
+
+Содержимое компонентов:
+
+Header - функциональный компонент. Принимает props: title (текст заголовка). Подключает стиль из CSS.
+UserCard - функциональный компонент, который отображает одного пользователя. Props: name (строка) age (число) avatar (картинка). Используйте inline-стили для оформления карточки.
+UserList - классовый компонент, который хранит state с массивом пользователей. Каждый пользователь - объект { id, name, age, avatar }. Рендерит массив UserCard с помощью props. Добавляет форму для добавления нового пользователя (имя, возраст, выбор аватара). При добавлении нового пользователя обновляет state и ререндерит список.
+Footer - функциональный компонент, который принимает props text и отображает футер. Подключает CSS или inline-стиль. 
+App - главный компонент, который композитно рендерит: Header → UserList → Footer. Передаёт props в Header и Footer.
+
+Используйте изображения из папки /images/. Inline-стили и CSS-файл.
+ */
